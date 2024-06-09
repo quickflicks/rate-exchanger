@@ -1,9 +1,8 @@
-// app.js
 document.addEventListener('DOMContentLoaded', () => {
     const amountInput = document.getElementById('amount');
-    const fromCurrency = document.getElementById('fromCurrency');
-    const toCurrency = document.getElementById('toCurrency');
-    const result = document.getElementById('result');
+    const fromCurrencySelect = document.getElementById('fromCurrency');
+    const toCurrencySelect = document.getElementById('toCurrency');
+    const resultDiv = document.getElementById('result');
     const convertButton = document.getElementById('convert');
     
     // Function to populate currency dropdowns
@@ -12,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const option1 = document.createElement('option');
             option1.value = currency;
             option1.textContent = currency;
-            fromCurrency.appendChild(option1);
+            fromCurrencySelect.appendChild(option1);
             
             const option2 = document.createElement('option');
             option2.value = currency;
             option2.textContent = currency;
-            toCurrency.appendChild(option2);
+            toCurrencySelect.appendChild(option2);
         }
     };
     
@@ -33,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Convert currency
     convertButton.addEventListener('click', () => {
         const amount = parseFloat(amountInput.value);
-        const from = fromCurrency.value;
-        const to = toCurrency.value;
+        const from = fromCurrencySelect.value;
+        const to = toCurrencySelect.value;
         
         if (isNaN(amount) || from === '' || to === '') {
-            result.textContent = 'Please fill in all fields.';
+            resultDiv.textContent = 'Please fill in all fields.';
             return;
         }
         
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const rate = data.rates[to];
                 const convertedAmount = (amount * rate).toFixed(2);
-                result.textContent = `${amount} ${from} = ${convertedAmount} ${to}`;
+                resultDiv.textContent = `${amount} ${from} = ${convertedAmount} ${to}`;
             })
             .catch(error => console.error('Error fetching exchange rate:', error));
     });
