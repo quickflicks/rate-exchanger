@@ -46,6 +46,18 @@ h1 {
     margin-bottom: 30px;
 }
 
+.input-container, .select-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-container label, .select-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #fff;
+}
+
 .currency-select, #amount {
     width: calc(100% - 20px);
     padding: 10px;
