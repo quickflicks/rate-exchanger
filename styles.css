@@ -1,40 +1,45 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f8f9fa;
     margin: 0;
 }
 
 .container {
-    background: white;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
+    background-color: #ffffff;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .exchange-container {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
 
-input, select, button {
+.currency-select {
+    flex: 1;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#amount {
+    flex: 2;
 }
 
 button {
-    background-color: #007BFF;
-    color: white;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -44,5 +49,7 @@ button:hover {
 
 #result {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
 }
